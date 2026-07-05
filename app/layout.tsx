@@ -7,7 +7,6 @@ import VideoDialog from "@/components/ui/VideoDialog";
 
 import "@/styles.css";
 import { TailwindIndicator } from "@/components/ui/breakpoint-indicator";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -37,14 +36,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn(fontSans.variable, nunito.variable, lato.variable)}>
-      <body className="min-h-screen bg-background font-sans antialiased transition-colors duration-1000">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <VideoDialogProvider>
-            {children}
-            <VideoDialog />
-          </VideoDialogProvider>
-          <TailwindIndicator />
-        </ThemeProvider>
+      <body className="min-h-screen bg-background font-sans antialiased">
+        <VideoDialogProvider>
+          {children}
+          <VideoDialog />
+        </VideoDialogProvider>
+        <TailwindIndicator />
       </body>
     </html>
   );
