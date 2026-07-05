@@ -194,7 +194,7 @@ export default function ClientPortfolio({ education, experience, projects, publi
             <BackgroundSphere isDark={isDark} />
 
             {isDark && (
-              <EffectComposer disableNormalPass>
+              <EffectComposer enableNormalPass={false}>
                 <Bloom luminanceThreshold={0.2} mipmapBlur intensity={0.6} radius={0.4} />
                 <ChromaticAberration blendFunction={BlendFunction.NORMAL} offset={new THREE.Vector2(0.002, 0.002)} />
               </EffectComposer>
